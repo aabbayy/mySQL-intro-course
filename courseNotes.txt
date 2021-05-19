@@ -1,0 +1,16 @@
+What is a database?
+    A collection of data.
+    A method for accessing or manipulating data.
+Database vs DBMS (database management system)
+    DBMS, the link (middle man) between Your App and the Database. 
+    Think: Your App > DBMS > Database. =
+    Common DBMS:
+        PostgreSQL
+        Oracle Database
+    Common Database:    
+        MySQL
+        SQlite
+
+Bottom Line:
+
+"A structured set of computerized data with an accessible interface"
