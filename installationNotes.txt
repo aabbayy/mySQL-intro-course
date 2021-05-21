@@ -28,4 +28,8 @@ Using TABLEPLUS
 
     *note root is an administrator user*
 
-    
+Run sequence:
+export PATH=${PATH}:/usr/local/mysql/bin/
+mysql -u root -p
+password
+
