@@ -14,3 +14,8 @@ Database vs DBMS (database management system)
 Bottom Line:
 
 "A structured set of computerized data with an accessible interface"
+
+Creating Databases
+    akjsdhgkshg
+    askdjhfkasj
+    
