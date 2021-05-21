@@ -1,0 +1,31 @@
+To install MySQL
+    Have Homebrew installed on Mac
+        to install Homebrew see link: https://brew.sh/
+    Through Terminal use: 
+        brew install MySQL
+    then run: 
+        brew services start MySQL
+    to pw protect run: 
+        mysql_secure_installation
+        answer the questions
+    the stop sql run:
+        brew services stop MySQL
+    
+running mySQl
+    run:    
+        mysql.server start
+    and
+        mysql.server stop
+    if you don't want it to reboot when your mac restarts. 
+
+Using TABLEPLUS
+    Install TABLEPLUS
+    Click create new connection
+    Click MySQL
+    Insert a name under name and 'root' under user.
+    If you made a password, enter this under password. 
+    Click Connect
+
+    *note root is an administrator user*
+
+    
