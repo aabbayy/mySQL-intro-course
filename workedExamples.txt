@@ -1,0 +1,9 @@
+Draw a Tweets Table
+    A username (max 15 chracters)
+    The tweet content (max 140 chars)
+    Number of favourites
+
+Columns:
+    VARCHAR(15) Username
+    VARCHAR(140) Content
+    INT Favourites

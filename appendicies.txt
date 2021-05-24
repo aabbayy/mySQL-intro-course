@@ -1,0 +1,32 @@
+1.1
+Numeric
+    INT
+    SMALLINT
+    TINYINT
+    MEDIUMINT
+    BIGINT
+    DECIMAL
+    NUMERIC
+    FLOAT
+    DOUBLE
+    BIT
+String
+    CHAR
+    VARCHAR
+    BINARY
+    VARBINARY
+    BLOB
+    TINYBLOB
+    MEDIUMBLOB
+    LONGBLOB
+    TEXT
+    TINYTEXT
+    MEDIUMTEXT
+    LONGTEXT
+    ENUM
+Date Types
+    DATE
+    DATETIME
+    TIMESTAMP
+    TIME
+    YEAR

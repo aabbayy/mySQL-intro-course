@@ -12,10 +12,35 @@ Database vs DBMS (database management system)
         SQlite
 
 Bottom Line:
-
 "A structured set of computerized data with an accessible interface"
 
 Creating Databases
-    akjsdhgkshg
-    askdjhfkasj
-    
+    show databases;
+    CREATE DATABASE <name>;
+
+Delete Databases
+    DROP DATABASE <name>;
+
+Use Databases
+    USE <database name>;
+    SELECT database(); 
+        // this is to view the current dase
+
+TABLES
+    Columns refer to headers
+    Rows refer to the data
+
+All the Datatypes for SQL (found in app. 1.1)
+    The main ones uses in this example:
+    Numeric = INT (Whole Number)
+    String = VARCHAR (Variable-Length String)
+        Between 1-255 characters
+        Varchar requires a limit
+            e.g. varchar(100)
+
+CODE
+    CREATE TABLE <tablename>
+    (
+        column_name data_types,
+        column_name data_type,
+    );
