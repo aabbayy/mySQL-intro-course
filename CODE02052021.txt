@@ -1,0 +1,75 @@
+Last login: Mon May 31 16:43:05 on console
+abbydurbridge@Abbys-MacBook-Air ~ % export PATH=${PATH}:/usr/local/mysql/bin/
+mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.25 Homebrew
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show database
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| DogApp             |
+| dogwalkingAPP      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.22 sec)
+
+mysql> CREATE DATABASE bakeryShop;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> USE bakeryShop;
+Database changed
+mysql> SELECT database();
++------------+
+| database() |
++------------+
+| bakeryshop |
++------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE bread (
+    -> name VARCHAR(50), quantity INT);
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_bakeryshop |
++----------------------+
+| bread                |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> DESC bread;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| name     | varchar(50) | YES  |     | NULL    |       |
+| quantity | int         | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+
+mysql> DROP TABLE bread;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> SHOW TABLES;
+Empty set (0.00 sec)
+
+mysql> 
