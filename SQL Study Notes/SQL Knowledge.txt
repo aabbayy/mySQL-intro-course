@@ -1,0 +1,47 @@
+What is SQL?
+    SQL stands for Structured Query Language,
+    and it is used to communicate with the Database. 
+    This is a standard language used to perform tasks such as:
+        retrieval;
+        updation;
+        insertion, and;
+        deletion of data from a database.
+
+What is a Database?
+    Organised form of data for easy access, storing, retrieval and  managing of data. 
+
+What are tables and fields?
+    Table
+        set of data that are organised in a model with columns and rows.
+    Fields
+        specified number of column called fields but can have any number of rows wich is called record. 
+
+What is a Query?
+    A request for data from single or multiple tables in the database.
+
+PRIMARY KEY
+    A combination of fields which uniquely secify a row.
+    This is a special kind a unique key, and it has NOT NULL constrict, meaning it cannot be NULL
+    A table in SQL is indexed by default based on its primary key. 
+
+UNIQUE KEY
+    Unique Key constraint unique identified each record in the database. This provides uniqueness for the column or set of columns. 
+
+FOREIGN KEY constraint
+    Foreign Key:
+        defines a relationship between two tables;
+        uniquely identifies all the records in the referenced table;
+        may or may not be unique but can be comprised of multiple fields.
+    
+What is a Join?
+    The is a keyword used to query data from more tables based on the relation ship between the fields of the table. 
+
+UPDATE is used to updata data in the database.
+
+ORDER BY
+    Requires a ASC or DESC keyword explicitly to sort the result set.
+
+UNIQUE
+    SQL query used to fetch unique values from a field?
+        SELECT DISTINCT column_name FROM table_name;
+
