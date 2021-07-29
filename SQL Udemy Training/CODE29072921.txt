@@ -1,0 +1,74 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> Create Database Animals;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Use Database Animals;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> USE Animals;
+Database changed
+mysql> CREATE TABLE cats(name VARCHAR(50), age INT);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO cats (name, age)
+    -> VALUES('Luna',4);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_animals |
++-------------------+
+| cats              |
++-------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT * CATS;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CATS' at line 1
+mysql> SELECT * FROM cats;
++------+------+
+| name | age  |
++------+------+
+| Luna |    4 |
++------+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO cats (name, age)
+    -> VALUES('kitch', 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM cats;
++-------+------+
+| name  | age  |
++-------+------+
+| Luna  |    4 |
+| kitch |    2 |
++-------+------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO cats (name, age)
+    -> VALUES ('grumpy',9),
+    -> ('nexus',5),
+    -> ('humphry',14);
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM cats;
++---------+------+
+| name    | age  |
++---------+------+
+| Luna    |    4 |
+| kitch   |    2 |
+| grumpy  |    9 |
+| nexus   |    5 |
+| humphry |   14 |
++---------+------+
+5 rows in set (0.00 sec)
