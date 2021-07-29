@@ -44,3 +44,16 @@ CODE
         column_name data_types,
         column_name data_type,
     );
+
+INSERT
+    INSERT INTO table_name(variable,variable)
+    VALUES (,);
+/* the order of the vaules must match the columns */
+/* you can add multiple values seperated by column */
+
+
+VIEW DATA added
+    SELECT * FROM <datebase>;
+ 
+
+
