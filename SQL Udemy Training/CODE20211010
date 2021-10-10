@@ -1,0 +1,121 @@
+Last login: Wed Oct  6 10:56:19 on console
+abbydurbridge@Abbys-MacBook-Air-2 ~ % brew services start MYSQL
+==> Tapping homebrew/services
+Cloning into '/opt/homebrew/Library/Taps/homebrew/homebrew-services'...
+fatal: unable to access 'https://github.com/Homebrew/homebrew-services/': Could not resolve host: github.com
+Error: Failure while executing; `git clone https://github.com/Homebrew/homebrew-services /opt/homebrew/Library/Taps/homebrew/homebrew-services --origin=origin --template=` exited with 128.
+Error: Failure while executing; `/opt/homebrew/bin/brew tap homebrew/services` exited with 1.
+abbydurbridge@Abbys-MacBook-Air-2 ~ % brew services start MYSQL 
+==> Tapping homebrew/services
+Cloning into '/opt/homebrew/Library/Taps/homebrew/homebrew-services'...
+remote: Enumerating objects: 1440, done.
+remote: Counting objects: 100% (319/319), done.
+remote: Compressing objects: 100% (233/233), done.
+remote: Total 1440 (delta 123), reused 245 (delta 80), pack-reused 1121
+Receiving objects: 100% (1440/1440), 425.38 KiB | 1.64 MiB/s, done.
+Resolving deltas: 100% (599/599), done.
+Tapped 1 command (35 files, 525.3KB).
+==> Successfully started `MYSQL` (label: homebrew.mxcl.MYSQL)
+abbydurbridge@Abbys-MacBook-Air-2 ~ % export PATH=${PATH}:/usr/local/mysql/bin/
+mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+abbydurbridge@Abbys-MacBook-Air-2 ~ % export PATH=${PATH}:/usr/local/mysql/bin/
+mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.26 Homebrew
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE TABLE uniquedogs1 (dog_id INT NOT NUL AUTO_INCREMENT, name VARCHAR(50), age INT, PRIMARY KEY (dog_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NUL AUTO_INCREMENT, name VARCHAR(50), age INT, PRIMARY KEY (dog_id))' at line 1
+mysql> CREATE TABLE uniquedogs1 (dog_id INT NOT NULL AUTO_INCREMENT, name VARCHAR(50), age INT, PRIMARY KEY (dog_id));
+ERROR 1046 (3D000): No database selected
+mysql> show database
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> Show Databases;
++--------------------+
+| Database           |
++--------------------+
+| Animals            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> USE Animals;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SELECT database();
++------------+
+| database() |
++------------+
+| animals    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE uniquedogs1 (dog_id INT NOT NUL AUTO_INCREMENT, name VARCHAR(50), age INT, PRIMARY KEY (dog_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NUL AUTO_INCREMENT, name VARCHAR(50), age INT, PRIMARY KEY (dog_id))' at line 1
+mysql> CREATE TABLE uniquedogs1 (dog_id INT NOT NULL AUTO_INCREMENT, name VARCHAR(50), age INT, PRIMARY KEY (dog_id));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> DESC uniquedogs;
+ERROR 1146 (42S02): Table 'animals.uniquedogs' doesn't exist
+mysql> DESC uniquedogsl:
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':' at line 1
+mysql> DESC uniquedogs1;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| dog_id | int         | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(50) | YES  |     | NULL    |                |
+| age    | int         | YES  |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> INSERT INTO uniquedogs1(name, age) VALUES ('Kumo', 4);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> Show Tables;
++-------------------+
+| Tables_in_animals |
++-------------------+
+| cats              |
+| people            |
+| uniquedogs1       |
++-------------------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO uniquedogs1(name,age)
+    -> VALUES ('Gun', 2)
+    -> ,('Hagrid',7)
+    -> ,('Charlie',2);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM Uniquedogs1;
++--------+---------+------+
+| dog_id | name    | age  |
++--------+---------+------+
+|      1 | Kumo    |    4 |
+|      2 | Gun     |    2 |
+|      3 | Hagrid  |    7 |
+|      4 | Charlie |    2 |
++--------+---------+------+
+4 rows in set (0.00 sec)
+
+mysql> 
